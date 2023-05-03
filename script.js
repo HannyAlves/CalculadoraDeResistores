@@ -6,10 +6,12 @@ function valorTotal(){
 
     let soma = (Fax1 + Fax2)
     let mult = parseInt(soma * Fax3)
-    let valTotal = parseFloat(mult - (Fax4/100 * mult))
-    let total = ("O valor estará entre: " + mult + "Ω" + " e " + valTotal + "Ω")
+    let valMin = parseFloat(mult - (Fax4/100 * mult))
+    let valMax = parseFloat(mult + (Fax4/100 * mult))
+    let resist = ("O valor da resistência é " + mult + "Ω" + " " + 
+    "e o valor da tolerância estará entre " + valMin + "Ω" + " e " + valMax + "Ω")
 
-    document.getElementById("resultado").innerHTML = total
+    document.getElementById("resultado").innerHTML = resist
 }
 function mudarCor(){
     var Valf1 = document.getElementById("faixa1").value
